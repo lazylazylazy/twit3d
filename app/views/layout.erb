@@ -8,8 +8,17 @@
 	<div id="container">
 		
 		<h1>Twit3d</h1>
-		<div class="front-image">
-			<img src="images/twitter.png" data-pic='main-image'>
+		<div class="top-panel">
+			<img class='top-image' src="images/twitter.png" style='max-width: 100%' data-pic='main-image'>
+		</div>
+		<div class="left-panel">
+			<img class="left-image" src="images/twitter.png" style='max-width: 100%' data-pic='main-image'>
+		</div>
+		<div class="right-panel">
+			<img class='right-image' src="images/twitter.png" style='max-width: 100%' data-pic='main-image'>
+		</div>
+		<div class="bottom-panel">
+			<img class='bottom-image' src="images/twitter.png" style='max-width: 100%' data-pic='main-image'>
 		</div>
 
 	</div>
@@ -25,16 +34,23 @@
 			var xCoord = event.pageX;
 			var yCoord = event.pageY;
 
-			var rot = ((xCoord / ($(this).outerWidth())) * 360) / 2;
-			rot = Math.round(rot);
 
-			console.log(xCoord);
+			var rot = ((xCoord / ($(this).outerWidth())) * 180) /2;
+			// rot = Math.round(rot);
+			var rot2 = ((yCoord / ($(this).outerHeight())) * 360);
+			rot2 = Math.round(rot2);
+
+
+			// console.log(xCoord);
 			// console.log(yCoord);
-			console.log(rot);
+			console.log(rot2);
 
 			
-			$(this).find('img').css('-webkit-transform', 'rotateY(' + Math.min(90, Math.round(rot)) + 'deg)');
-			
+			$(this).find('.left-image').css('-webkit-transform', 'rotateY(' +  Math.round(rot) + 'deg)');
+			$(this).find('.right-image').css('-webkit-transform', 'rotateY(-' +  Math.round(rot) + 'deg)');
+			$(this).find('.bottom-image').css('-webkit-transform', 'rotateX(' +  Math.round(rot) + 'deg)');
+			$(this).find('.top-image').css('-webkit-transform', 'rotateX(-' +   Math.round(rot) + 'deg)');
+			// math.min(min:max)takes smallest
 	});
 	</script>
 </body>
