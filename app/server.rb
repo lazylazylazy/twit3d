@@ -20,5 +20,5 @@ require 'sinatra'
 # set :partial_template_engine, :erb
 
 get "/" do
-	erb: layout
+ erb :layout
 end

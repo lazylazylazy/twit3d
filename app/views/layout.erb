@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Title</title>
+		<title>Twit3d</title>
 	<link rel="stylesheet" type="text/css" href="/css/application.css">
 </head>
 <body>
-	<h1>Title</h1>
-	<div class="example">
-		<img src="images/example.png" data='example'>
+	<div id="container">
+		
+		<h1>Twit3d</h1>
+		<div class="front-image">
+			<img src="images/twitter.png" data-pic='main-image'>
+		</div>
+
 	</div>
-	<script src='http://code.jquery.com/jquery-2.0.3.js'></script>	
-	<script src='lib/filename.js'></script>
+	<script src='/jquery-2.0.3.js'></script>	
+	<!-- // <script src='lib/filename.js'></script> -->
 	<script>
-		JS here
+		// window.addEventListener('load', funtion(){
+		// 	var image = document.getElementById('front-image');
+		// 	image.addEventListener('mousemove', )
+		// })
+
+		$("#container").mousemove(function(event){
+			var xCoord = event.pageX;
+			var yCoord = event.pageY;
+
+			var rot = ((xCoord / ($(this).outerWidth())) * 360) / 2;
+			rot = Math.round(rot);
+
+			console.log(xCoord);
+			// console.log(yCoord);
+			console.log(rot);
+
+			
+			$(this).find('img').css('-webkit-transform', 'rotateY(' + Math.min(90, Math.round(rot)) + 'deg)');
+			
+	});
 	</script>
 </body>
 </html>
