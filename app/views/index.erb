@@ -37,7 +37,7 @@
 
 			var rot = ((xCoord / ($(this).outerWidth())) * 180) /2;
 			// rot = Math.round(rot);
-			var rot2 = ((yCoord / ($(this).outerHeight())) * 360);
+			var rot2 = ((yCoord / ($(this).outerHeight())) * 180) /1.8;
 			rot2 = Math.round(rot2);
 
 
@@ -49,7 +49,7 @@
 			$(this).find('.left-image').css('-webkit-transform', 'rotateY(' +  Math.round(rot) + 'deg)');
 			$(this).find('.right-image').css('-webkit-transform', 'rotateY(-' +  Math.round(rot) + 'deg)');
 			$(this).find('.bottom-image').css('-webkit-transform', 'rotateX(' +  Math.round(rot) + 'deg)');
-			$(this).find('.top-image').css('-webkit-transform', 'rotateX(-' +   Math.round(rot) + 'deg)');
+			$(this).find('.top-image').css('-webkit-transform', 'rotateX(-' +   Math.round(rot2) + 'deg)');
 			// math.min(min:max)takes smallest
 	});
 	</script>

@@ -20,5 +20,9 @@ require 'sinatra'
 # set :partial_template_engine, :erb
 
 get "/" do
- erb :layout
+ erb :index
+end
+
+get '/3d' do
+	erb :threedee
 end
